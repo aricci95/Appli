@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link href="../../web/bundles/Appli/css/main.css" rel="stylesheet" type="text/css">
+        <link href="../../web/bundles/Appli/css/blablacar.css" rel="stylesheet" type="text/css">
+        <link href="../../web/bundles/Appli/css/appli.css" rel="stylesheet" type="text/css">
+        <title>{% block title %}BlaBlaTest - Antoine Ricci{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <header class="site-header" role="banner">
+            <div class="container clearfix">
+                <a href="/" class="logo">
+                    <img src="https://d1ovtcjitiy70m.cloudfront.net/vi-1/images/blablacar-logo-290x48.png" width="145" height="24" alt="BlaBlaCar">
+                </a>
+            </div>
+        </header>
+
+        <div id="maincontent" class="container" role="main">
+            <div class="flash-template alert no-icon hide clearfix" data-level-class="alert-LEVEL" data-message-selector=".flash-content"></div>
+            <div class="search-in">
+                <div class="trip-search-form search-form search-container">
+                    By Antoine Ricci (aricci95@gmail.com)
+                </div>
+            </div>
+            <div id="search-layout" class="row">
+                <div class="span3">
+                    <div id="search-facets" class="main-column form-container trip-search-facets clearfix">
+                        <div class="main-column-block" data-tracker="seats-facet">
+                    <span class="sprite ui-checkbox pull-left"></span>
+                    <span class="facet-label">
+                        <!-- MENU -->
+                        <table>
+                            <tr>
+                                <th>Index</th>
+                            </tr>
+                            <tr>
+                                <th>Menu1</th>
+                            </tr>
+                            <tr>
+                                <th>Menu2</th>
+                            </tr>
+                            <tr>
+                                <th>Menu3</th>
+                            </tr>
+                        </table>
+                    </span>
+                </div>
+                </div>
+            </div>
+                <div class="span9">
+                    {% block body %}{% endblock %}
+                </div>
+        </div>
+    </body>
+</html>

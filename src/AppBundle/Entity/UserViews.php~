@@ -1,0 +1,44 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * UserViews
+ *
+ * @ORM\Table(name="user_views")
+ * @ORM\Entity
+ */
+class UserViews
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="viewer_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $viewerId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="viewed_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $viewedId;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="view_date", type="datetime")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $viewDate;
+
+
+}
+
