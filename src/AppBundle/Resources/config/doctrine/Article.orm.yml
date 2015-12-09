@@ -1,0 +1,111 @@
+AppBundle\Entity\Article:
+    type: entity
+    table: article
+    id:
+        artId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: art_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        artLibel:
+            type: string
+            nullable: false
+            length: 60
+            options:
+                fixed: false
+            column: art_libel
+        categorieId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '5'
+            column: categorie_id
+        artDescription:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: art_description
+        refStateId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '1'
+            column: ref_state_id
+        artPrice:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: art_price
+        artDate:
+            type: datetime
+            nullable: false
+            column: art_date
+        userId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: user_id
+        artPhotoUrl:
+            type: string
+            nullable: true
+            length: 80
+            options:
+                fixed: false
+            column: art_photo_url
+        artColour:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+            column: art_colour
+        artPoids:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: art_poids
+        artTaille:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: art_taille
+        artMarque:
+            type: string
+            nullable: true
+            length: 35
+            options:
+                fixed: false
+            column: art_marque
+        livrePoste:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: livre_poste
+        livreSurplace:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: livre_surplace
+        artStateId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '1'
+            column: art_state_id
+    lifecycleCallbacks: {  }

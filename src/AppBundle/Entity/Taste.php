@@ -2,40 +2,36 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Taste
- *
- * @ORM\Table(name="taste")
- * @ORM\Entity
  */
 class Taste
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="user_id", type="integer", nullable=false)
+     */
+    private $id;
+
+    /**
+     * @var integer
      */
     private $userId;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="data", type="text", length=65535, nullable=false)
      */
     private $data;
 
+
     /**
-     * @var integer
+     * Get id
      *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return integer
      */
-    private $id;
-
-
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set userId
@@ -84,14 +80,5 @@ class Taste
     {
         return $this->data;
     }
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 }
+

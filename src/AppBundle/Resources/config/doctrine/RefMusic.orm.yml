@@ -1,0 +1,22 @@
+AppBundle\Entity\RefMusic:
+    type: entity
+    table: ref_music
+    id:
+        musicId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: music_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        musicLibel:
+            type: string
+            nullable: false
+            length: 35
+            options:
+                fixed: false
+            column: music_libel
+    lifecycleCallbacks: {  }

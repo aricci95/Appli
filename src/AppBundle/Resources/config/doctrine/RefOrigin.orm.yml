@@ -1,0 +1,22 @@
+AppBundle\Entity\RefOrigin:
+    type: entity
+    table: ref_origin
+    id:
+        originId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: origin_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        originLibel:
+            type: string
+            nullable: false
+            length: 35
+            options:
+                fixed: false
+            column: origin_libel
+    lifecycleCallbacks: {  }

@@ -1,0 +1,48 @@
+AppBundle\Entity\Ville:
+    type: entity
+    table: ville
+    id:
+        villeId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ville_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        insee:
+            type: string
+            nullable: false
+            length: 8
+            options:
+                fixed: false
+        nom:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        altitude:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        codePostal:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: code_postal
+        longitude:
+            type: decimal
+            nullable: false
+            precision: 15
+            scale: 15
+        lattitude:
+            type: decimal
+            nullable: false
+            precision: 15
+            scale: 15
+    lifecycleCallbacks: {  }

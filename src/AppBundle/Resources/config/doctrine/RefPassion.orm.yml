@@ -1,0 +1,22 @@
+AppBundle\Entity\RefPassion:
+    type: entity
+    table: ref_passion
+    id:
+        passionId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: passion_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        passionLibel:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: passion_libel
+    lifecycleCallbacks: {  }

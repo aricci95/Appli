@@ -2,33 +2,31 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * RefBand
- *
- * @ORM\Table(name="ref_band")
- * @ORM\Entity
  */
 class RefBand
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="band_libel", type="string", length=35, nullable=false)
-     */
-    private $bandLibel;
-
-    /**
      * @var integer
-     *
-     * @ORM\Column(name="band_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $bandId;
 
+    /**
+     * @var string
+     */
+    private $bandLibel;
 
+
+    /**
+     * Get bandId
+     *
+     * @return integer
+     */
+    public function getBandId()
+    {
+        return $this->bandId;
+    }
 
     /**
      * Set bandLibel
@@ -53,14 +51,5 @@ class RefBand
     {
         return $this->bandLibel;
     }
-
-    /**
-     * Get bandId
-     *
-     * @return integer
-     */
-    public function getBandId()
-    {
-        return $this->bandId;
-    }
 }
+

@@ -1,0 +1,50 @@
+AppBundle\Entity\Mail:
+    type: entity
+    table: mail
+    id:
+        mailId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: mail_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        mailContent:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: mail_content
+        mailExpediteur:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: mail_expediteur
+        mailDestinataire:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: mail_destinataire
+        mailDate:
+            type: datetime
+            nullable: false
+            column: mail_date
+        mailStateId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: mail_state_id
+        mailboxId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: mailbox_id
+    lifecycleCallbacks: {  }

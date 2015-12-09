@@ -2,34 +2,20 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * ListPassion
- *
- * @ORM\Table(name="list_passion")
- * @ORM\Entity
  */
 class ListPassion
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="list_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $listId;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="passion_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $passionId;
-
 
 
     /**
@@ -80,3 +66,4 @@ class ListPassion
         return $this->passionId;
     }
 }
+

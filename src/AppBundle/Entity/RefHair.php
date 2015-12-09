@@ -2,33 +2,31 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * RefHair
- *
- * @ORM\Table(name="ref_hair")
- * @ORM\Entity
  */
 class RefHair
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="hair_libel", type="string", length=35, nullable=false)
-     */
-    private $hairLibel;
-
-    /**
      * @var integer
-     *
-     * @ORM\Column(name="hair_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $hairId;
 
+    /**
+     * @var string
+     */
+    private $hairLibel;
 
+
+    /**
+     * Get hairId
+     *
+     * @return integer
+     */
+    public function getHairId()
+    {
+        return $this->hairId;
+    }
 
     /**
      * Set hairLibel
@@ -53,14 +51,5 @@ class RefHair
     {
         return $this->hairLibel;
     }
-
-    /**
-     * Get hairId
-     *
-     * @return integer
-     */
-    public function getHairId()
-    {
-        return $this->hairId;
-    }
 }
+

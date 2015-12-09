@@ -2,97 +2,31 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Link
- *
- * @ORM\Table(name="link")
- * @ORM\Entity
  */
 class Link
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="status", type="integer", nullable=false)
-     */
-    private $status;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="modification_date", type="date", nullable=false)
-     */
-    private $modificationDate;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="expediteur_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $expediteurId;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="destinataire_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $destinataireId;
 
-
+    /**
+     * @var integer
+     */
+    private $status;
 
     /**
-     * Set status
-     *
-     * @param integer $status
-     *
-     * @return Link
+     * @var \DateTime
      */
-    public function setStatus($status)
-    {
-        $this->status = $status;
+    private $modificationDate;
 
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return integer
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * Set modificationDate
-     *
-     * @param \DateTime $modificationDate
-     *
-     * @return Link
-     */
-    public function setModificationDate($modificationDate)
-    {
-        $this->modificationDate = $modificationDate;
-
-        return $this;
-    }
-
-    /**
-     * Get modificationDate
-     *
-     * @return \DateTime
-     */
-    public function getModificationDate()
-    {
-        return $this->modificationDate;
-    }
 
     /**
      * Set expediteurId
@@ -141,4 +75,53 @@ class Link
     {
         return $this->destinataireId;
     }
+
+    /**
+     * Set status
+     *
+     * @param integer $status
+     *
+     * @return Link
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return integer
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Set modificationDate
+     *
+     * @param \DateTime $modificationDate
+     *
+     * @return Link
+     */
+    public function setModificationDate($modificationDate)
+    {
+        $this->modificationDate = $modificationDate;
+
+        return $this;
+    }
+
+    /**
+     * Get modificationDate
+     *
+     * @return \DateTime
+     */
+    public function getModificationDate()
+    {
+        return $this->modificationDate;
+    }
 }
+

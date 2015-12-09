@@ -2,40 +2,36 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * RefCategorie
- *
- * @ORM\Table(name="ref_categorie")
- * @ORM\Entity
  */
 class RefCategorie
 {
     /**
+     * @var integer
+     */
+    private $categorieId;
+
+    /**
      * @var string
-     *
-     * @ORM\Column(name="categorie_libel", type="string", length=50, nullable=false)
      */
     private $categorieLibel;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="main_categorie_id", type="integer", nullable=false)
      */
     private $mainCategorieId;
 
+
     /**
-     * @var integer
+     * Get categorieId
      *
-     * @ORM\Column(name="categorie_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return integer
      */
-    private $categorieId;
-
-
+    public function getCategorieId()
+    {
+        return $this->categorieId;
+    }
 
     /**
      * Set categorieLibel
@@ -84,14 +80,5 @@ class RefCategorie
     {
         return $this->mainCategorieId;
     }
-
-    /**
-     * Get categorieId
-     *
-     * @return integer
-     */
-    public function getCategorieId()
-    {
-        return $this->categorieId;
-    }
 }
+

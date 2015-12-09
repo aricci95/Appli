@@ -2,34 +2,20 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Blacklist
- *
- * @ORM\Table(name="blacklist")
- * @ORM\Entity
  */
 class Blacklist
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="user_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $userId;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="black_listed_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $blackListedId;
-
 
 
     /**
@@ -80,3 +66,4 @@ class Blacklist
         return $this->blackListedId;
     }
 }
+

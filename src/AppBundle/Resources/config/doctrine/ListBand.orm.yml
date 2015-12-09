@@ -1,0 +1,19 @@
+AppBundle\Entity\ListBand:
+    type: entity
+    table: list_band
+    id:
+        listId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: list_id
+        bandId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: band_id
+    lifecycleCallbacks: {  }

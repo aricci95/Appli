@@ -1,0 +1,19 @@
+AppBundle\Entity\ListFilm:
+    type: entity
+    table: list_film
+    id:
+        listId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: list_id
+        filmId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: film_id
+    lifecycleCallbacks: {  }

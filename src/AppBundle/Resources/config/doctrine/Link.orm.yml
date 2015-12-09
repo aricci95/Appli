@@ -1,0 +1,29 @@
+AppBundle\Entity\Link:
+    type: entity
+    table: link
+    id:
+        expediteurId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: expediteur_id
+        destinataireId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: destinataire_id
+    fields:
+        status:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        modificationDate:
+            type: date
+            nullable: false
+            column: modification_date
+    lifecycleCallbacks: {  }

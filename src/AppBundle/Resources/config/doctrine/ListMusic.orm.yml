@@ -1,0 +1,19 @@
+AppBundle\Entity\ListMusic:
+    type: entity
+    table: list_music
+    id:
+        listId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: list_id
+        musicId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: music_id
+    lifecycleCallbacks: {  }

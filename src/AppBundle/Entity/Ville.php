@@ -2,68 +2,56 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Ville
- *
- * @ORM\Table(name="ville")
- * @ORM\Entity
  */
 class Ville
 {
     /**
+     * @var integer
+     */
+    private $villeId;
+
+    /**
      * @var string
-     *
-     * @ORM\Column(name="insee", type="string", length=8, nullable=false)
      */
     private $insee;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="nom", type="text", length=65535, nullable=false)
      */
     private $nom;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="altitude", type="integer", nullable=false)
      */
     private $altitude;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="code_postal", type="integer", nullable=false)
      */
     private $codePostal;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="longitude", type="decimal", precision=15, scale=15, nullable=false)
      */
     private $longitude;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="lattitude", type="decimal", precision=15, scale=15, nullable=false)
      */
     private $lattitude;
 
+
     /**
-     * @var integer
+     * Get villeId
      *
-     * @ORM\Column(name="ville_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return integer
      */
-    private $villeId;
-
-
+    public function getVilleId()
+    {
+        return $this->villeId;
+    }
 
     /**
      * Set insee
@@ -208,14 +196,5 @@ class Ville
     {
         return $this->lattitude;
     }
-
-    /**
-     * Get villeId
-     *
-     * @return integer
-     */
-    public function getVilleId()
-    {
-        return $this->villeId;
-    }
 }
+

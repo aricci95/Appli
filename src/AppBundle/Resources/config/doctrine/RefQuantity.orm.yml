@@ -1,0 +1,22 @@
+AppBundle\Entity\RefQuantity:
+    type: entity
+    table: ref_quantity
+    id:
+        quantityId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: quantity_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        quantityLibel:
+            type: string
+            nullable: false
+            length: 35
+            options:
+                fixed: false
+            column: quantity_libel
+    lifecycleCallbacks: {  }

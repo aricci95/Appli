@@ -1,0 +1,208 @@
+AppBundle\Entity\User:
+    type: entity
+    repositoryClass: AppBundle\Repository\UserRepository
+    table: user
+    id:
+        userId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: user_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        userLogin:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: user_login
+        userPwd:
+            type: string
+            nullable: false
+            length: 35
+            options:
+                fixed: false
+            column: user_pwd
+        userGender:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: user_gender
+        userSubscribeDate:
+            type: datetime
+            nullable: false
+            column: user_subscribe_date
+        roleId:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: role_id
+        userLastConnexion:
+            type: datetime
+            nullable: false
+            column: user_last_connexion
+        userBirth:
+            type: date
+            nullable: false
+            column: user_birth
+        eyesId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: eyes_id
+        originId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: origin_id
+        userDescription:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: user_description
+        userLightDescription:
+            type: string
+            nullable: false
+            length: 77
+            options:
+                fixed: false
+            column: user_light_description
+        userCity:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: user_city
+        userZipcode:
+            type: string
+            nullable: false
+            length: 5
+            options:
+                fixed: false
+            column: user_zipcode
+        userPhotoUrl:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: user_photo_url
+        userAlcohol:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: user_alcohol
+        userSmoke:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: user_smoke
+        userTattoo:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: user_tattoo
+        userDrugs:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: user_drugs
+        styleId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: style_id
+        hairId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: hair_id
+        lookId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: look_id
+        userPiercing:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: user_piercing
+        userProfession:
+            type: string
+            nullable: false
+            length: 35
+            options:
+                fixed: false
+            column: user_profession
+        userMusic:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: user_music
+        userPoids:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: user_poids
+        userTaille:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: user_taille
+        weekUser:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+            column: week_user
+        userMail:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: user_mail
+        userValid:
+            type: string
+            nullable: false
+            length: 35
+            options:
+                fixed: false
+            column: user_valid
+        listId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: list_id
+        villeId:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: ville_id
+    lifecycleCallbacks: {  }

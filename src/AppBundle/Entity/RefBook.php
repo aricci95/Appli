@@ -2,33 +2,31 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * RefBook
- *
- * @ORM\Table(name="ref_book")
- * @ORM\Entity
  */
 class RefBook
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="book_libel", type="string", length=75, nullable=false)
-     */
-    private $bookLibel;
-
-    /**
      * @var integer
-     *
-     * @ORM\Column(name="book_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $bookId;
 
+    /**
+     * @var string
+     */
+    private $bookLibel;
 
+
+    /**
+     * Get bookId
+     *
+     * @return integer
+     */
+    public function getBookId()
+    {
+        return $this->bookId;
+    }
 
     /**
      * Set bookLibel
@@ -53,14 +51,5 @@ class RefBook
     {
         return $this->bookLibel;
     }
-
-    /**
-     * Get bookId
-     *
-     * @return integer
-     */
-    public function getBookId()
-    {
-        return $this->bookId;
-    }
 }
+

@@ -2,33 +2,31 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * RefOrigin
- *
- * @ORM\Table(name="ref_origin")
- * @ORM\Entity
  */
 class RefOrigin
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="origin_libel", type="string", length=35, nullable=false)
-     */
-    private $originLibel;
-
-    /**
      * @var integer
-     *
-     * @ORM\Column(name="origin_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $originId;
 
+    /**
+     * @var string
+     */
+    private $originLibel;
 
+
+    /**
+     * Get originId
+     *
+     * @return integer
+     */
+    public function getOriginId()
+    {
+        return $this->originId;
+    }
 
     /**
      * Set originLibel
@@ -53,14 +51,5 @@ class RefOrigin
     {
         return $this->originLibel;
     }
-
-    /**
-     * Get originId
-     *
-     * @return integer
-     */
-    public function getOriginId()
-    {
-        return $this->originId;
-    }
 }
+

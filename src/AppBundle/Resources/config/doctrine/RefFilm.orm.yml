@@ -1,0 +1,22 @@
+AppBundle\Entity\RefFilm:
+    type: entity
+    table: ref_film
+    id:
+        filmId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: film_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        filmLibel:
+            type: string
+            nullable: false
+            length: 35
+            options:
+                fixed: false
+            column: film_libel
+    lifecycleCallbacks: {  }

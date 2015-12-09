@@ -1,0 +1,28 @@
+AppBundle\Entity\Mailbox:
+    type: entity
+    table: mailbox
+    id:
+        mailboxId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+            id: true
+            column: mailbox_id
+        userId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+            id: true
+            column: user_id
+    fields:
+        mailboxTypeId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: mailbox_type_id
+    lifecycleCallbacks: {  }

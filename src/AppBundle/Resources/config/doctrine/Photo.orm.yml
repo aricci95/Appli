@@ -1,0 +1,35 @@
+AppBundle\Entity\Photo:
+    type: entity
+    table: photo
+    id:
+        photoId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: photo_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        keyId:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: key_id
+        photoUrl:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: photo_url
+        typeId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: type_id
+    lifecycleCallbacks: {  }

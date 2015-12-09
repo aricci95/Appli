@@ -2,54 +2,46 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Forum
- *
- * @ORM\Table(name="forum")
- * @ORM\Entity
  */
 class Forum
 {
     /**
+     * @var integer
+     */
+    private $id;
+
+    /**
      * @var string
-     *
-     * @ORM\Column(name="content", type="text", length=65535, nullable=false)
      */
     private $content;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="user_id", type="integer", nullable=false)
      */
     private $userId;
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="date", type="datetime", nullable=true)
      */
     private $date;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="user_login", type="string", length=35, nullable=false)
      */
     private $userLogin;
 
+
     /**
-     * @var integer
+     * Get id
      *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return integer
      */
-    private $id;
-
-
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set content
@@ -146,14 +138,5 @@ class Forum
     {
         return $this->userLogin;
     }
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 }
+

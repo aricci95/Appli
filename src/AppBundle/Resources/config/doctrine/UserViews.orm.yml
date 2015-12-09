@@ -1,0 +1,24 @@
+AppBundle\Entity\UserViews:
+    type: entity
+    table: user_views
+    id:
+        viewerId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: viewer_id
+        viewedId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: viewed_id
+        viewDate:
+            type: datetime
+            nullable: false
+            id: true
+            column: view_date
+    lifecycleCallbacks: {  }

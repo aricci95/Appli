@@ -2,33 +2,31 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * RefLook
- *
- * @ORM\Table(name="ref_look")
- * @ORM\Entity
  */
 class RefLook
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="look_libel", type="string", length=35, nullable=false)
-     */
-    private $lookLibel;
-
-    /**
      * @var integer
-     *
-     * @ORM\Column(name="look_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $lookId;
 
+    /**
+     * @var string
+     */
+    private $lookLibel;
 
+
+    /**
+     * Get lookId
+     *
+     * @return integer
+     */
+    public function getLookId()
+    {
+        return $this->lookId;
+    }
 
     /**
      * Set lookLibel
@@ -53,14 +51,5 @@ class RefLook
     {
         return $this->lookLibel;
     }
-
-    /**
-     * Get lookId
-     *
-     * @return integer
-     */
-    public function getLookId()
-    {
-        return $this->lookId;
-    }
 }
+

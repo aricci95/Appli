@@ -2,33 +2,31 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * RefEyes
- *
- * @ORM\Table(name="ref_eyes")
- * @ORM\Entity
  */
 class RefEyes
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="eyes_libel", type="string", length=35, nullable=false)
-     */
-    private $eyesLibel;
-
-    /**
      * @var integer
-     *
-     * @ORM\Column(name="eyes_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $eyesId;
 
+    /**
+     * @var string
+     */
+    private $eyesLibel;
 
+
+    /**
+     * Get eyesId
+     *
+     * @return integer
+     */
+    public function getEyesId()
+    {
+        return $this->eyesId;
+    }
 
     /**
      * Set eyesLibel
@@ -53,14 +51,5 @@ class RefEyes
     {
         return $this->eyesLibel;
     }
-
-    /**
-     * Get eyesId
-     *
-     * @return integer
-     */
-    public function getEyesId()
-    {
-        return $this->eyesId;
-    }
 }
+

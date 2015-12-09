@@ -2,75 +2,61 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * News
- *
- * @ORM\Table(name="news")
- * @ORM\Entity
  */
 class News
 {
     /**
+     * @var integer
+     */
+    private $newsId;
+
+    /**
      * @var string
-     *
-     * @ORM\Column(name="news_titre", type="string", length=100, nullable=false)
      */
     private $newsTitre;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="news_contenu", type="text", length=65535, nullable=false)
      */
     private $newsContenu;
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="news_date", type="datetime", nullable=false)
      */
     private $newsDate;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="news_type_id", type="integer", nullable=false)
      */
     private $newsTypeId;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="user_id", type="integer", nullable=false)
      */
     private $userId;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="news_media_url", type="text", length=65535, nullable=true)
      */
     private $newsMediaUrl;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="news_photo_url", type="text", length=65535, nullable=true)
      */
     private $newsPhotoUrl;
 
+
     /**
-     * @var integer
+     * Get newsId
      *
-     * @ORM\Column(name="news_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return integer
      */
-    private $newsId;
-
-
+    public function getNewsId()
+    {
+        return $this->newsId;
+    }
 
     /**
      * Set newsTitre
@@ -239,14 +225,5 @@ class News
     {
         return $this->newsPhotoUrl;
     }
-
-    /**
-     * Get newsId
-     *
-     * @return integer
-     */
-    public function getNewsId()
-    {
-        return $this->newsId;
-    }
 }
+

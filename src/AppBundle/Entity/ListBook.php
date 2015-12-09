@@ -2,34 +2,20 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * ListBook
- *
- * @ORM\Table(name="list_book")
- * @ORM\Entity
  */
 class ListBook
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="list_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $listId;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="book_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $bookId;
-
 
 
     /**
@@ -80,3 +66,4 @@ class ListBook
         return $this->bookId;
     }
 }
+

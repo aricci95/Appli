@@ -1,0 +1,22 @@
+AppBundle\Entity\RefLook:
+    type: entity
+    table: ref_look
+    id:
+        lookId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: look_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        lookLibel:
+            type: string
+            nullable: false
+            length: 35
+            options:
+                fixed: false
+            column: look_libel
+    lifecycleCallbacks: {  }

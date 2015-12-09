@@ -2,54 +2,46 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Comments
- *
- * @ORM\Table(name="comments")
- * @ORM\Entity
  */
 class Comments
 {
     /**
+     * @var integer
+     */
+    private $commentId;
+
+    /**
      * @var string
-     *
-     * @ORM\Column(name="comment_contenu", type="text", length=65535, nullable=false)
      */
     private $commentContenu;
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="comment_date", type="datetime", nullable=false)
      */
     private $commentDate;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="user_id", type="integer", nullable=false)
      */
     private $userId;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="news_id", type="integer", nullable=false)
      */
     private $newsId;
 
+
     /**
-     * @var integer
+     * Get commentId
      *
-     * @ORM\Column(name="comment_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return integer
      */
-    private $commentId;
-
-
+    public function getCommentId()
+    {
+        return $this->commentId;
+    }
 
     /**
      * Set commentContenu
@@ -146,14 +138,5 @@ class Comments
     {
         return $this->newsId;
     }
-
-    /**
-     * Get commentId
-     *
-     * @return integer
-     */
-    public function getCommentId()
-    {
-        return $this->commentId;
-    }
 }
+

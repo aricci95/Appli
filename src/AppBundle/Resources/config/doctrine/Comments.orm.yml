@@ -1,0 +1,38 @@
+AppBundle\Entity\Comments:
+    type: entity
+    table: comments
+    id:
+        commentId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: comment_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        commentContenu:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: comment_contenu
+        commentDate:
+            type: datetime
+            nullable: false
+            column: comment_date
+        userId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: user_id
+        newsId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: news_id
+    lifecycleCallbacks: {  }

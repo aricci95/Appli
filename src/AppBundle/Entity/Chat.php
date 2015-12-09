@@ -2,61 +2,51 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Chat
- *
- * @ORM\Table(name="chat")
- * @ORM\Entity
  */
 class Chat
 {
     /**
+     * @var integer
+     */
+    private $id;
+
+    /**
      * @var string
-     *
-     * @ORM\Column(name="from", type="string", length=255, nullable=false)
      */
     private $from = '';
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="to", type="string", length=255, nullable=false)
      */
     private $to = '';
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="message", type="text", length=65535, nullable=false)
      */
     private $message;
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="sent", type="datetime", nullable=false)
      */
     private $sent = '0000-00-00 00:00:00';
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="recd", type="integer", nullable=false)
      */
     private $recd = '0';
 
+
     /**
-     * @var integer
+     * Get id
      *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return integer
      */
-    private $id;
-
-
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set from
@@ -177,14 +167,5 @@ class Chat
     {
         return $this->recd;
     }
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 }
+

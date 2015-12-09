@@ -1,0 +1,19 @@
+AppBundle\Entity\ListPassion:
+    type: entity
+    table: list_passion
+    id:
+        listId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: list_id
+        passionId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: passion_id
+    lifecycleCallbacks: {  }

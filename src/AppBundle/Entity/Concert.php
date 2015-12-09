@@ -2,33 +2,31 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Concert
- *
- * @ORM\Table(name="concert")
- * @ORM\Entity
  */
 class Concert
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="concert_libel", type="text", length=65535, nullable=false)
-     */
-    private $concertLibel;
-
-    /**
      * @var integer
-     *
-     * @ORM\Column(name="concert_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $concertId;
 
+    /**
+     * @var string
+     */
+    private $concertLibel;
 
+
+    /**
+     * Get concertId
+     *
+     * @return integer
+     */
+    public function getConcertId()
+    {
+        return $this->concertId;
+    }
 
     /**
      * Set concertLibel
@@ -53,14 +51,5 @@ class Concert
     {
         return $this->concertLibel;
     }
-
-    /**
-     * Get concertId
-     *
-     * @return integer
-     */
-    public function getConcertId()
-    {
-        return $this->concertId;
-    }
 }
+

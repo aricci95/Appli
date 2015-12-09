@@ -1,0 +1,22 @@
+AppBundle\Entity\RefEyes:
+    type: entity
+    table: ref_eyes
+    id:
+        eyesId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: eyes_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        eyesLibel:
+            type: string
+            nullable: false
+            length: 35
+            options:
+                fixed: false
+            column: eyes_libel
+    lifecycleCallbacks: {  }

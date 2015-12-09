@@ -2,47 +2,41 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Photo
- *
- * @ORM\Table(name="photo")
- * @ORM\Entity
  */
 class Photo
 {
     /**
+     * @var integer
+     */
+    private $photoId;
+
+    /**
      * @var string
-     *
-     * @ORM\Column(name="key_id", type="string", length=30, nullable=false)
      */
     private $keyId;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="photo_url", type="text", length=65535, nullable=false)
      */
     private $photoUrl;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="type_id", type="integer", nullable=false)
      */
     private $typeId;
 
+
     /**
-     * @var integer
+     * Get photoId
      *
-     * @ORM\Column(name="photo_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return integer
      */
-    private $photoId;
-
-
+    public function getPhotoId()
+    {
+        return $this->photoId;
+    }
 
     /**
      * Set keyId
@@ -115,14 +109,5 @@ class Photo
     {
         return $this->typeId;
     }
-
-    /**
-     * Get photoId
-     *
-     * @return integer
-     */
-    public function getPhotoId()
-    {
-        return $this->photoId;
-    }
 }
+

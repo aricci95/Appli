@@ -2,34 +2,20 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * ListFilm
- *
- * @ORM\Table(name="list_film")
- * @ORM\Entity
  */
 class ListFilm
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="list_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $listId;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="film_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $filmId;
-
 
 
     /**
@@ -80,3 +66,4 @@ class ListFilm
         return $this->filmId;
     }
 }
+

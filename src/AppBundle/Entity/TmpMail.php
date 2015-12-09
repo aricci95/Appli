@@ -2,68 +2,56 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * TmpMail
- *
- * @ORM\Table(name="tmp_mail")
- * @ORM\Entity
  */
 class TmpMail
 {
     /**
+     * @var integer
+     */
+    private $mailId;
+
+    /**
      * @var string
-     *
-     * @ORM\Column(name="mail_content", type="text", length=65535, nullable=false)
      */
     private $mailContent;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="mail_expediteur", type="integer", nullable=false)
      */
     private $mailExpediteur;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="mail_destinataire", type="integer", nullable=false)
      */
     private $mailDestinataire;
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="mail_date", type="datetime", nullable=false)
      */
     private $mailDate;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="mail_state_id", type="integer", nullable=false)
      */
     private $mailStateId;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="mailbox_id", type="integer", nullable=false)
      */
     private $mailboxId;
 
+
     /**
-     * @var integer
+     * Get mailId
      *
-     * @ORM\Column(name="mail_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return integer
      */
-    private $mailId;
-
-
+    public function getMailId()
+    {
+        return $this->mailId;
+    }
 
     /**
      * Set mailContent
@@ -208,14 +196,5 @@ class TmpMail
     {
         return $this->mailboxId;
     }
-
-    /**
-     * Get mailId
-     *
-     * @return integer
-     */
-    public function getMailId()
-    {
-        return $this->mailId;
-    }
 }
+

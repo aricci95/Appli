@@ -1,0 +1,22 @@
+AppBundle\Entity\RefMailboxType:
+    type: entity
+    table: ref_mailbox_type
+    id:
+        mailboxTypeId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: mailbox_type_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        mailboxTypeLibel:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+            column: mailbox_type_libel
+    lifecycleCallbacks: {  }

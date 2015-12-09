@@ -1,0 +1,22 @@
+AppBundle\Entity\RefBand:
+    type: entity
+    table: ref_band
+    id:
+        bandId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: band_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        bandLibel:
+            type: string
+            nullable: false
+            length: 35
+            options:
+                fixed: false
+            column: band_libel
+    lifecycleCallbacks: {  }

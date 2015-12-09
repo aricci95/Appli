@@ -2,68 +2,56 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Covoit
- *
- * @ORM\Table(name="covoit")
- * @ORM\Entity
  */
 class Covoit
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="concert_id", type="integer", nullable=false)
+     */
+    private $covoitId;
+
+    /**
+     * @var integer
      */
     private $concertId;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="user_id", type="integer", nullable=false)
      */
     private $userId;
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="date_depart", type="datetime", nullable=false)
      */
     private $dateDepart;
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="date_retour", type="datetime", nullable=false)
      */
     private $dateRetour;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="price", type="integer", nullable=true)
      */
     private $price = '0';
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="ville_id", type="integer", nullable=true)
      */
     private $villeId;
 
+
     /**
-     * @var integer
+     * Get covoitId
      *
-     * @ORM\Column(name="covoit_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return integer
      */
-    private $covoitId;
-
-
+    public function getCovoitId()
+    {
+        return $this->covoitId;
+    }
 
     /**
      * Set concertId
@@ -208,14 +196,5 @@ class Covoit
     {
         return $this->villeId;
     }
-
-    /**
-     * Get covoitId
-     *
-     * @return integer
-     */
-    public function getCovoitId()
-    {
-        return $this->covoitId;
-    }
 }
+

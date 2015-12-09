@@ -1,0 +1,18 @@
+AppBundle\Entity\UserStatuses:
+    type: entity
+    table: user_statuses
+    id:
+        userId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: user_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        status:
+            type: boolean
+            nullable: false
+    lifecycleCallbacks: {  }
