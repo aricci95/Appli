@@ -15,7 +15,7 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         // La méthode findAll retourne toutes les catégories de la base de données
-        $users = $em->getRepository('AppBundle:User')->findByUserLogin(array('Lebowski', 'Tritt'));
+        $users = $em->getRepository('AppBundle:User')->findAllOrderedByName();
 
 
 
