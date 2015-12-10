@@ -5,11 +5,42 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\User;
+use AppBundle\Form\UserType;
 
 class DefaultController extends Controller
 {
 
-    public function indexAction(Request $request)
+    public function indexAction()
+    {
+        return $this->render(
+            'default/index.html.twig', array('title' => 'Index')
+        );
+    }
+
+    public function formAction(Request $request)
+    {
+        $user = new User();
+        $form = $this->createForm(UserType::class, $user);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $user = $form->getData();
+            echo $user->getUserLogin();
+/*
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();*/
+        }
+
+        return $this->render(
+            'default/form.html.twig', array('title' => 'Form', 'form' => $form->createView())
+        );
+
+    }
+
+    public function listAction(Request $request)
     {
 
         $em = $this->getDoctrine()->getManager();
@@ -22,7 +53,7 @@ class DefaultController extends Controller
 
         // replace this example code with whatever you need
         return $this->render(
-            'default/index.html.twig', array('title' => 'Index', 'users' => $users)
+            'default/list.html.twig', array('title' => 'List', 'users' => $users)
         );
     }
 }
