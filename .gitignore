@@ -1,4 +1,2 @@
-!var/cache/.gitkeep
-!var/logs/.gitkeep
-!var/sessions/.gitkeep
-/phpunit.xml
+var/*
+var/cache/dev/profiler/index.csv
