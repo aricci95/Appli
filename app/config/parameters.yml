@@ -1,0 +1,13 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver:   pdo_mysql
+    database_host: localhost
+    database_port: ~
+    database_name: metallinbmlink
+    database_user: root
+    database_password: root
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: 082a2baebf9a07ef69a20472bc592564a2107fd7
