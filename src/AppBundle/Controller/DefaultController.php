@@ -12,14 +12,15 @@ class DefaultController extends AppController
 
     public function indexAction()
     {
-        return $this->render(
-            'AppBundle:default:index.html.twig', array('title' => 'Index')
+        $this->setViewTitle('Index');
+
+        return $this->renderView(
+            'AppBundle:default:index.html.twig'
         );
     }
 
     public function formAction(Request $request)
     {
-
         $this->setViewTitle('Form');
 
         $concert = new Concert();
@@ -44,14 +45,15 @@ class DefaultController extends AppController
 
     public function listAction(Request $request)
     {
+        $this->setViewTitle('List');
         $em = $this->getDoctrine()->getManager();
 
         // La méthode findAll retourne toutes les catégories de la base de données
         $users = $em->getRepository('AppBundle:User')->findAllOrderedByName();
 
         // replace this example code with whatever you need
-        return $this->render(
-            'AppBundle:default:list.html.twig', array('title' => 'List', 'users' => $users)
+        return $this->renderView(
+            'AppBundle:default:list.html.twig', array('users' => $users)
         );
     }
 }

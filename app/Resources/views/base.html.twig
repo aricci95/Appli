@@ -5,8 +5,16 @@
         <link href="{{ asset('bundles/App/css/main.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('bundles/App/css/blablacar.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('bundles/App/css/appli.css') }}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/Growler/css/gritter.css') }}" />
         <title>{% block title %}BlaBlaTest - Antoine Ricci{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        <script type="text/javascript" src="{{ asset('bundles/App/js/jquery-1.11.1.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/Growler/js/gritter.js') }}"></script>
+        <script>
+            $.extend($.gritter.options, {
+                position: 'bottom-right'
+            });
+        </script>
         {% block javascripts %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -62,7 +70,20 @@
                 </div>
             </div>
                 <div class="span9">
-                    {% block body %}{% endblock %}
+                    <div id="wrapper">
+                        <div id="container">
+                            <div id="welcome">
+                                <h1>
+                                    {% if title is defined %}
+                                        {{ title }}
+                                    {% endif %}
+                                </h1>
+                            </div>
+                            <div id="content">
+                                {% block body %}{% endblock %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
         </div>
     </body>
