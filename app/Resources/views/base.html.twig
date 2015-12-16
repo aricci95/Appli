@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <link href="../../web/bundles/App/css/main.css" rel="stylesheet" type="text/css">
-        <link href="../../web/bundles/App/css/blablacar.css" rel="stylesheet" type="text/css">
-        <link href="../../web/bundles/App/css/appli.css" rel="stylesheet" type="text/css">
+        <link href="{{ asset('bundles/App/css/main.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('bundles/App/css/blablacar.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('bundles/App/css/appli.css') }}" rel="stylesheet" type="text/css">
         <title>{% block title %}BlaBlaTest - Antoine Ricci{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         {% block javascripts %}{% endblock %}
@@ -18,7 +18,20 @@
                 </a>
             </div>
         </header>
-
+        {% block growler %}
+            {% if growler_messages is defined %}
+                <script>
+                    {% for growler_message in growler_messages %}
+                        $(function(){
+                            $.gritter.add({
+                                text:  '{{ growler_message.message }}',
+                                class_name : 'gritter-{{ growler_message.type }}'
+                            });
+                        });
+                    {% endfor %}
+                </script>
+            {% endif %}
+        {% endblock %}
         <div id="maincontent" class="container" role="main">
             <div class="flash-template alert no-icon hide clearfix" data-level-class="alert-LEVEL" data-message-selector=".flash-content"></div>
             <div class="search-in">
@@ -42,9 +55,6 @@
                             </tr>
                             <tr>
                                 <th><a href="{{ url('default_form') }}">Form</a></th>
-                            </tr>
-                            <tr>
-                                <th>Menu3</th>
                             </tr>
                         </table>
                     </span>

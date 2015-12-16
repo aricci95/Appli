@@ -7,3 +7,6 @@ default_list:
 default_form:
     path:     /form
     defaults: { _controller: AppBundle:Default:form }
+suggest_query:
+    path:     /suggest/{type}/{value}
+    defaults: { _controller: AppBundle:Suggest:index }

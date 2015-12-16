@@ -1,12 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="web/growler/css/gritter.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/Growler/css/gritter.css') }}" />
 {% endblock %}
 {% block javascripts %}
-    <script type="text/javascript" src="app/js/jquery-1.11.1.min.js"></script>
-     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-    <script type="text/javascript" src="MLink/appli/inc/growler/js/gritter.js"></script>
+    <script type="text/javascript" src="{{ asset('bundles/App/js/jquery-1.11.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/Growler/js/gritter.js') }}"></script>
     <script>
     $.extend($.gritter.options, {
         position: 'bottom-right'
@@ -20,7 +19,6 @@
             <div id="welcome">
                 <h1>{{ title }}</h1>
             </div>
-
             <div id="content">
                 {{ form(form) }}
             </div>
