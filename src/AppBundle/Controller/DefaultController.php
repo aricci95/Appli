@@ -5,8 +5,8 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\User;
-use AppBundle\Form\UserType;
+use AppBundle\Entity\Concert;
+use AppBundle\Form\ConcertType;
 
 class DefaultController extends Controller
 {
@@ -14,28 +14,26 @@ class DefaultController extends Controller
     public function indexAction()
     {
         return $this->render(
-            'default/index.html.twig', array('title' => 'Index')
+            'AppBundle:default:index.html.twig', array('title' => 'Index')
         );
     }
 
     public function formAction(Request $request)
     {
-        $user = new User();
-        $form = $this->createForm(UserType::class, $user);
+        $concert = new Concert();
+        $form = $this->createForm(ConcertType::class, $concert);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $user = $form->getData();
-            echo $user->getUserLogin();
-/*
             $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
-            $em->flush();*/
+            $em->persist($concert);
+            $em->flush();
+            echo 'entry saved';
         }
 
         return $this->render(
-            'default/form.html.twig', array('title' => 'Form', 'form' => $form->createView())
+            'AppBundle:default:form.html.twig', array('title' => 'Form', 'form' => $form->createView())
         );
 
     }
@@ -53,7 +51,7 @@ class DefaultController extends Controller
 
         // replace this example code with whatever you need
         return $this->render(
-            'default/list.html.twig', array('title' => 'List', 'users' => $users)
+            'AppBundle:default:list.html.twig', array('title' => 'List', 'users' => $users)
         );
     }
 }
