@@ -2,7 +2,7 @@
 parameters:
     database_host: localhost
     database_port: null
-    database_name: metallinbmlink
+    database_name: blabla
     database_user: root
     database_password: root
     mailer_transport: smtp

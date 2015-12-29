@@ -48,12 +48,12 @@ class DefaultController extends AppController
         $this->setViewTitle('List');
         $em = $this->getDoctrine()->getManager();
 
-        $concerts = $em->getRepository('AppBundle:Concert')->findAll();
+        $users = $em->getRepository('AppBundle:User')->findAll();
 
         // replace this example code with whatever you need
         return $this->renderView(
             'AppBundle:default:list.html.twig', array(
-                'concerts' => $concerts,
+                'users' => $users,
             )
         );
     }
@@ -61,8 +61,8 @@ class DefaultController extends AppController
     public function deleteAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $concert = $em->getRepository('AppBundle:Concert')->find($id);
-        $em->remove($concert);
+        $user = $em->getRepository('AppBundle:User')->find($id);
+        $em->remove($user);
         $em->flush();
 
         return $this->redirectToRoute('default_list');

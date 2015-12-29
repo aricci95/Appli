@@ -12,12 +12,6 @@ AppBundle\Entity\Covoit:
             generator:
                 strategy: IDENTITY
     fields:
-        concertId:
-            type: integer
-            nullable: false
-            options:
-                unsigned: false
-            column: concert_id
         userId:
             type: integer
             nullable: false

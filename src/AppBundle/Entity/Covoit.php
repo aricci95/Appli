@@ -15,11 +15,6 @@ class Covoit
     /**
      * @var integer
      */
-    private $concertId;
-
-    /**
-     * @var integer
-     */
     private $userId;
 
     /**
@@ -35,7 +30,7 @@ class Covoit
     /**
      * @var integer
      */
-    private $price = '0';
+    private $price = 0;
 
     /**
      * @var integer
@@ -51,30 +46,6 @@ class Covoit
     public function getCovoitId()
     {
         return $this->covoitId;
-    }
-
-    /**
-     * Set concertId
-     *
-     * @param integer $concertId
-     *
-     * @return Covoit
-     */
-    public function setConcertId($concertId)
-    {
-        $this->concertId = $concertId;
-
-        return $this;
-    }
-
-    /**
-     * Get concertId
-     *
-     * @return integer
-     */
-    public function getConcertId()
-    {
-        return $this->concertId;
     }
 
     /**
