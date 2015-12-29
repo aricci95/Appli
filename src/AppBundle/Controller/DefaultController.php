@@ -43,17 +43,28 @@ class DefaultController extends AppController
 
     }
 
-    public function listAction(Request $request)
+    public function listAction()
     {
         $this->setViewTitle('List');
         $em = $this->getDoctrine()->getManager();
 
-        // La méthode findAll retourne toutes les catégories de la base de données
-        $users = $em->getRepository('AppBundle:User')->findAllOrderedByName();
+        $concerts = $em->getRepository('AppBundle:Concert')->findAll();
 
         // replace this example code with whatever you need
         return $this->renderView(
-            'AppBundle:default:list.html.twig', array('users' => $users)
+            'AppBundle:default:list.html.twig', array(
+                'concerts' => $concerts,
+            )
         );
+    }
+
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $concert = $em->getRepository('AppBundle:Concert')->find($id);
+        $em->remove($concert);
+        $em->flush();
+
+        return $this->redirectToRoute('default_list');
     }
 }
