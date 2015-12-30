@@ -2,6 +2,9 @@
 
 namespace AppBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+use Gedmo\Mapping\Annotation as Gedmo;
+
 /**
  * Ville
  */
@@ -19,6 +22,7 @@ class Ville
 
     /**
      * @var integer
+     * @Assert\Length(min=5, max=5)
      */
     private $codePostal;
 

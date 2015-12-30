@@ -20,7 +20,8 @@ AppBundle\Entity\Ville:
                 fixed: false
         codePostal:
             type: integer
-            nullable: false
+            nullable: true
+            length: 5
             options:
                 unsigned: false
             column: code_postal
