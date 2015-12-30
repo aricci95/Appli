@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Ville list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Villeid</th>
+                <th>Nom</th>
+                <th>Codepostal</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ville in villes %}
+            <tr>
+                <td><a href="{{ path('ville_show', { 'id': ville.villeId }) }}">{{ ville.villeId }}</a></td>
+                <td>{{ ville.nom }}</td>
+                <td>{{ ville.codePostal }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('ville_show', { 'id': ville.villeId }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('ville_edit', { 'id': ville.villeId }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('ville_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
